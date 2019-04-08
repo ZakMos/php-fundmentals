@@ -1,9 +1,19 @@
 <?php
-  echo "<pre>";
-  print_r($_GET);
-  echo "<pre>";
 
-  echo $_GET['author'];
+  include 'assets/include.php';
+
+  if (isset($_SESSION['formPostData'])) {
+    $postedData = $_SESSION['formPostData'];
+
+    // we have tow ways to destroy the session
+    // session_destroy();
+    unset($_SESSION['formPostData']);
+  } else {
+    header('Location: index.php');
+  }
+
+
+
  ?>
 
 
@@ -20,25 +30,29 @@
         <h2>Mailing List Information</h2>
     </div>
     <div id="Body">
-      <div class="">
-        <label for="">Favorite Author:</label>
-        <span>&bsp;</span>
+      <div>
+        <label>Favorite Author:</label>
+        <span><?=$postedData['author']?>&nbsp;</span>
       </div>
-      <div class="">
-        <label for="">Favorite Century:</label>
-        <span><?=$postData['century']?>&nbsp;</span>
+      <div>
+        <label>Favorite Century:</label>
+        <span><?=print json_encode($postedData['century'])?>&nbsp;</span>
       </div>
-      <div class="">
-        <label for="">Comments:</label>
-        <span><?=$postData['comments']?>&nbsp;</span>
+      <div>
+        <label>Comments:</label>
+        <span><?=$postedData['comments']?>&nbsp;</span>
       </div>
-      <div class="">
-        <label for="">Name:</label>
-        <span><?=$postData['name']?>&nbsp;</span>
+      <div>
+        <label>Name:</label>
+        <span><?=$postedData['name']?>&nbsp;</span>
       </div>
-      <div class="">
-        <label for="">E-mail Address:</label>
-        <span><?=$postData['email']?>&nbsp;</span>
+      <div>
+        <label>E-mail Address:</label>
+        <span><?=$postedData['email']?>&nbsp;</span>
+      </div>
+      <div>
+        <label>Receive Newsletter:</label>
+        <span><?=$postedData['newsletter']?>&nbsp;</span>
       </div>
     </div>
   </body>
