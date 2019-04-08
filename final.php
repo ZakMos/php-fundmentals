@@ -1,6 +1,9 @@
 <?php
+  echo "<pre>";
+  print_r($_GET);
+  echo "<pre>";
 
-
+  echo $_GET['author'];
  ?>
 
 
@@ -13,7 +16,7 @@
   </head>
   <body>
     <div id="Header">
-      <img src="assetsDickens_Gurney_head.jpg" border="0" alt="">
+      <img src="assets/Dickens_Gurmey_head.jpg" border="0" alt="">
         <h2>Mailing List Information</h2>
     </div>
     <div id="Body">

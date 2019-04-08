@@ -23,10 +23,10 @@
         </h2>
     </div>
     <div id="Body">
-      <form class="" action="final.php" method="post">
+      <form class="" action="final.php" method="get">
         <div class="">
           <label for="author">Favorite Author</label>
-            <select class="" name="autohr">
+            <select class="" name="author">
               <?php while($row = $resultObj->fetch_assoc()) : ?>
                 <option value="<?=$row['id']?>"><?=$row['first_name']?> <?=$row['last_name']?></option>
               <?php endwhile; ?>

@@ -41,7 +41,7 @@ input, textarea, select {
   width: 400px;
   border: solid 3px #555;
   padding: 5px;
-  background: #f9f9f9;
+  background: #black;
 }
 
 input[type=submit] {
